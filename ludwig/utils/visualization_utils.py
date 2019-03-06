@@ -41,8 +41,6 @@ from mpl_toolkits.mplot3d import Axes3D
 # plt.rc('ytick', labelsize='x-large')
 # plt.rc('axes', labelsize='x-large')
 
-figure_counter = 0
-
 def learning_curves_plot(train_values, vali_values, metric, algorithm_names=None,
                         title=None):
     num_algorithms = len(train_values)
@@ -83,9 +81,10 @@ def learning_curves_plot(train_values, vali_values, metric, algorithm_names=None
     plt.show();
 
     fig = plt.figure()
-    figure_name = '/Figure_name_' + str(figure_counter) + '.png'  # Define Image's name
-    figure_counter += 1
-    print(figure_counter)
+    figure_name = '/figure_name_.png'
+    # figure_name = '/Figure_name_' + str(figure_counter) + '.png'  # Define Image's name
+    # figure_counter += 1
+    # print(figure_counter)
     fig.savefig(figure_name) # Save image
     display(Image(figure_name))
     # mpimg.imread(figure_name) # Open image
