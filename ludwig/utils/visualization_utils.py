@@ -35,6 +35,7 @@ import seaborn as sns
 from matplotlib import ticker
 from matplotlib.lines import Line2D
 from mpl_toolkits.mplot3d import Axes3D
+import Image
 
 
 # plt.rc('xtick', labelsize='x-large')
