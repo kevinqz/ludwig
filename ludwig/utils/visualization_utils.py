@@ -35,6 +35,8 @@ import seaborn as sns
 from matplotlib import ticker
 from matplotlib.lines import Line2D
 from mpl_toolkits.mplot3d import Axes3D
+
+from google.colab import files
 from IPython.display import display, Image
 
 
@@ -43,7 +45,7 @@ from IPython.display import display, Image
 # plt.rc('axes', labelsize='x-large')
 
 def learning_curves_plot(train_values, vali_values, metric, algorithm_names=None,
-                        title=None):
+                        title=None, figure_counter=0):
     num_algorithms = len(train_values)
     max_len = max([len(tv) for tv in train_values])
 
@@ -82,13 +84,13 @@ def learning_curves_plot(train_values, vali_values, metric, algorithm_names=None
     plt.show();
 
     fig = plt.figure()
-    figure_name = '/figure_name_.png'
-    # figure_name = '/Figure_name_' + str(figure_counter) + '.png'  # Define Image's name
-    # figure_counter += 1
-    # print(figure_counter)
+    figure_name = '/Figure_name_' + str(figure_counter) + '.png'  # Define Image's name
+    figure_counter += 1
+    print('figure_counter: ' + str(figure_counter))
     fig.savefig(figure_name) # Save image
+    files.download(figure_name) # Save image into Google Colaboratory
     display(Image(figure_name))
-    # mpimg.imread(figure_name) # Open image
+    mpimg.imread(figure_name) # Open image
     # print('Testing2')
 
 
