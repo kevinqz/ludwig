@@ -171,7 +171,16 @@ def compare_classifiers_line_plot(xs, scores, metric, algorithm_names=None,
 
     ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
     plt.tight_layout()
-    plt.show()
+    plt.show();
+
+    fig = plt.figure()
+    figure_name = '/Figure_name_' + str(figure_counter) + '.png'  # Define Image's name
+    figure_counter += 1
+    print(figure_counter)
+    fig.savefig(figure_name) # Save image
+    display(Image(figure_name))
+    # mpimg.imread(figure_name) # Open image
+    # print('Testing2')
 
 
 def compare_classifiers_multiclass_multimetric_plot(scores, metrics,
