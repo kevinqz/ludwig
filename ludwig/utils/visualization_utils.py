@@ -41,6 +41,8 @@ from mpl_toolkits.mplot3d import Axes3D
 # plt.rc('ytick', labelsize='x-large')
 # plt.rc('axes', labelsize='x-large')
 
+%matplotlib inline
+
 def learning_curves_plot(train_values, vali_values, metric, algorithm_names=None,
                         title=None):
     num_algorithms = len(train_values)
